@@ -1386,7 +1386,7 @@ function preguntas_test_vocacional(){
     <div class="row">
       <hr>            
           <div class="col col-md-8 col-sm-12 col-xs-12 text-muted well well-sm no-shadow">
-          <b><?=$contador;?>.- <?=utf8_encode($question);?></b> 
+          <b><?=$contador;?>.- <?=$question;?></b>
           </div>
           <div class="col col-md-1 col-sm-12 col-xs-12">
               <label>
