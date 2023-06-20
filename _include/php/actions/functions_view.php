@@ -1375,7 +1375,8 @@ function preguntas_test_vocacional(){
 
   include "../php/db/conexionDB.php";
 
-  $query  = $con -> prepare ("SELECT pg_txt_preg AS preguntas, pg_id AS id  FROM tbl_preguntas_app3 ORDER BY rand(preguntas);");
+  $query  = $con -> prepare ("SELECT pg_txt_preg AS preguntas, pg_id AS id  FROM tbl_preguntas_app3");
+  #$query  = $con -> prepare ("SELECT pg_txt_preg AS preguntas, pg_id AS id  FROM tbl_preguntas_app3 ORDER BY rand(preguntas);");
   #$query  = $con -> prepare ("SELECT pg_txt_preg AS preguntas, pg_id AS id  FROM tbl_preguntas_app3 ORDER BY id ASC;");
   $query -> execute();
   $contador = 1;
