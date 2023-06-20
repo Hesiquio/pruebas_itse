@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Sistemas  | Tutorias</title>
+
+    <!-- Bootstrap -->
+    <link href="<?=$vendors;?>bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="<?=$vendors;?>font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="<?=$vendors;?>nprogress/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="<?=$vendors;?>animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- themme datepicker-->
+    <link rel="stylesheet" href="<?=$css_app;?>/jquery-ui_picker.css" />
+
+    <!-- Custom Theme Style -->
+    <link href="<?=$build_css;?>custom.min.css" rel="stylesheet">
+
+    <!-- modals css -->
+    <link href="<?=$css_app;?>modal-header.css" rel="stylesheet">
+  </head>
+
+  <body class="login">
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+        
+        <div class="animate form login_form">
+          <form name="form_login" id="form_login">
+            <div align="center"><h3>Login Acceso</h3></div>
+            <div id="message_log" style="width:400px; float:right; margin: 0px;  position: fixed; z-index:10003 !important;"></div>
+            <section class="login_content">
+              
+              <div>
+                <span for="curp_login" generated="true" class="error"></span>
+              </div>
+              <div class="form-group">
+                <span class="docs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Ingresa tu matricula.">
+                  <input type="text" name="curp_login" id="curp_login" class="form-control" placeholder="Matricula" maxlength="10" onkeyup="javascript:this.value=this.value.toUpperCase();" >
+                </span>
+                <span class="input-group-btn docs-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="En caso de no conocer tu CURP, puedes Calcularla aquí">
+
+                  </span>
+              </div>
+              
+
+              <div>
+                <span for="pass_login" generated="true" class="error"></span>
+              </div>
+              <div class="input-group">
+                  <input type="password" name="pass_login" id="pass_login" class="form-control" placeholder="Contraseña" maxlength="8" >
+                <span class="input-group-btn docs-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Mostrar / Ocultar Contraseña">
+                  <button class="btn btn-success" type="button" id="change"><span id="changeclass" class="fa fa-eye"></span></button>
+                  </span>
+              </div>
+              <input type="hidden" name="data" value="1"> 
+                
+              
+              <div class="form-group">
+                <button class="btn btn-success submit" href="index.html"><span class="fa fa-sign-in"></span> Entrar</button>
+                <!--<a class="reset_pass" href="#">Olvidaste tu contraseña?</a>-->
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">Eres nuevo en esta APP?&nbsp;&nbsp;&nbsp;
+                  <a href="#signup" class="btn btn-default btn-xs to_register"> Registrate Aquí. <i class="fa fa-smile-o"></i></a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+
+                  <a href=""><img src="<?=$img_app;?>itselogo.png" width="150" height="80"></a>
+                  <h1> Tutorias ITSE</h1>
+                  <p>©<?=date("Y");?> Todos los Derechos Reservados. Desarrollado para Tutorias ITSE</p>
+                </div>
+              </div>
+          </section>
+            </form>
+        </div>
+
+        <div id="register" class="animate form registration_form">
+          <div align="center"><h3>Registro</h3></div>
+          <div id="message_reg" style="display:block;width:100%;margin:0%;float:center;position:fixed;z-index:10003 !important; "></div>
+          <form name="form_reg" id="form_reg">
+
+            <section class="login_content">
+              
+              <div>
+                <span for="curp_reg" generated="true" class="error"></span>
+              </div>
+              <div class="form-group">
+                <span class="docs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Ingresa tu matricula.">
+                  <input class="form-control" type="text" name="curp_reg" id="curp_reg" placeholder="Matricula " maxlength="10" onkeyup="javascript:this.value=this.value.toUpperCase();" >
+                </span>
+
+              </div>
+              
+
+                <div>
+                  <span for="nombre_reg" generated="true" class="error"></span>
+                </div>
+                <div class="form-group">
+                  <span class="docs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Escribe tu nombre completo">
+                    <input type="text" name="nombre_reg" id="nombre_reg" class="form-control" placeholder="Nombre Completo" onkeyup="javascript:this.value=this.value.toUpperCase();" />
+                    <input type="hidden" name="sexo" id="sexo">
+                  </span>
+                </div>
+                
+
+              <div>
+                <span for="pass_reg" generated="true" class="error"></span>
+              </div>
+              <div class="input-group">
+                  <span class="docs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="No más de 8 carácteres.">
+                  <input type="password" name="pass_reg" id="pass_reg" class="form-control" placeholder="Contraseña" maxlength="8" >
+                  </span>
+                <span class="input-group-btn docs-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Mostrar / Ocultar Contraseña">
+                  <button class="btn btn-success" type="button" id="changer"><span id="changerclass" class="fa fa-eye"></span></button>
+                  </span>
+              </div>
+              
+
+                <div>
+                  <span for="carrera_reg" generated="true" class="error"></span>
+                </div>
+                <?php
+                // function para imprimir las carreras por el tipo  Ingerierias / Licenciaturas
+                function carrera($tipo)
+                  {
+                    //incluimos la conexion a la base de datos
+                    include '_include/php/db/conexionDB.php';
+
+                    $consultatbl_carreras = $con->prepare("SELECT car_id AS Id, car_nombre AS Carrera FROM tbl_carreras
+                                                          WHERE car_tipo = '".$tipo."' AND car_status = '1' ORDER BY Id ASC;");
+                    $consultatbl_carreras->execute();
+                    // recorrer el bucle while para obtener las filas recorridas por la consulta.
+                    while ($data_car = $consultatbl_carreras -> fetch()) {
+                      // imprimir los options del select
+                      ?>
+                        <option value="<?=$data_car["Id"];?>"><?=$data_car["Carrera"];?></option>
+                      <?php
+                    }
+
+                  }
+
+                ?>
+                <div class="form-group">
+                  <span class="docs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selecciona tu especialidad.">
+                    <select name="carrera_reg" id="carrera_reg" class="form-control">
+                      <option value="">-- Selecciona tu Carrera --</option>
+                      <optgroup label="INGENIERIAS">
+                        <?=carrera("ING");?>
+                      </optgroup>
+                      <optgroup label="LICENCIATURAS">
+                        <?=carrera("LIC");?>
+                      </optgroup>
+                    </select>
+                  </span>
+                </div>
+                
+
+                <div>
+                  <span for="cv_reg" generated="true" class="error"></span>
+                </div>
+                <div class="form-group">
+                  <span class="docs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Esta CLAVE debe ser proporcioanda por el Administrador del sistema.">
+                  <input type="password" name="cv_reg" id="cv_reg" class="form-control" placeholder="Clave de Registro" /></span>
+                </div>
+                
+                <input type="hidden" name="data" value="3"><input type="hidden" name="rol" value="3">     
+              <div class="form-group">
+                <button type="submit" class="btn btn-success submit"> <span class="fa fa-user"></span> Registrarme</span></button>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">Eres usuario registrado?
+                  <a href="#signin" class="btn btn-default btn-xs to_register"> Inicia Sesión <span class="fa fa-sign-in"></span></a>
+                </p>
+
+                <div class="clearfix"></div>
+
+                <div>
+                 <a href=""><img src="<?=$img_app;?>itselogo.png" width="150" height="80"></a>
+                  <h1>Tutorias ITSE</h1>
+                  <p>©<?=date("Y");?> Todos los Derechos Reservados. Desarrollado para Tutorias ITSE</p>
+                </div>
+              </div>
+          </section>
+        </form>
+        </div>
+
+      </div>
+    </div>
+
+     <!-- Small modal -->
+    <div class="modal fade bs-example-modal-sm" id="CURP_GEN">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+
+
+          <div class="modal-body">
+            <!--//form CURP-->
+            <h3>Ingresa tus datos</h3>
+
+            <!--//fin form-->
+
+
+        </div>
+      </div>
+    </div>
+    <!-- /modals -->
+  </body>
+
+    
+  <!-- jQuery -->
+    <script src="<?=$vendors;?>jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="<?=$vendors;?>bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+      // Tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+    </script>
+    <!--DatePicker-->
+    <script src="<?=$js_app;?>datepicker/ui_1.11.4_jquery-ui.js"></script>
+    
+    <!--funcionalidades del form-->
+    <script src="<?=$js_app;?>log_script.js"></script>
+    <script src="<?=$js_app;?>jquery.validate.js"></script>
+    
+
+    
+</html>
