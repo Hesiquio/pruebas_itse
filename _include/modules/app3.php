@@ -11,7 +11,7 @@ include "../php/db/conexionDB.php";
 
     $contarfilas = $consultar->rowCount();
 
-    if ($contarfilas>=5) {
+    if ($contarfilas>=7) {
         ?>
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
@@ -171,7 +171,7 @@ include "../php/db/conexionDB.php";
                     '67':{ required:true },
                     '68':{ required:true },
                     '69':{ required:true },
-                    '70':{ required:true }
+                    '70':{ required:true },
                     '71':{ required:true },
                     '72':{ required:true },
                     '73':{ required:true },
@@ -182,6 +182,9 @@ include "../php/db/conexionDB.php";
                     '78':{ required:true },
                     '79':{ required:true },
                     '80':{ required:true }
+
+
+
 
                      },
                      messages: {
@@ -265,6 +268,9 @@ include "../php/db/conexionDB.php";
                          '78': ap+txt+ci,
                          '79': ap+txt+ci,
                          '80': ap+txt+ci
+
+
+
                      },
                      debug: true,
                      errorElement: "span",
