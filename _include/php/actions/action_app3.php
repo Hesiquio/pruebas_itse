@@ -18,7 +18,10 @@ respuesta_alum($id_alumno, 5, $_POST["41"],$_POST["42"],$_POST["43"],$_POST["44"
 respuesta_alum($id_alumno, 6, $_POST["1"],$_POST["2"],$_POST["3"],$_POST["4"],$_POST["5"],$_POST["6"],$_POST["7"],$_POST["8"],$_POST["9"],$_POST["10"]);
 // LT id
 respuesta_alum($id_alumno, 7, $_POST["51"],$_POST["52"],$_POST["53"],$_POST["54"],$_POST["55"],$_POST["56"],$_POST["57"],$_POST["58"],$_POST["59"],$_POST["60"]);
-
+// I.AD.EF id
+respuesta_alum($id_alumno, 8, $_POST["61"],$_POST["62"],$_POST["63"],$_POST["64"],$_POST["65"],$_POST["66"],$_POST["67"],$_POST["68"],$_POST["69"],$_POST["70"]);
+//C.P. id
+respuesta_alum($id_alumno, 9, $_POST["71"],$_POST["72"],$_POST["73"],$_POST["74"],$_POST["75"],$_POST["76"],$_POST["77"],$_POST["78"],$_POST["79"],$_POST["80"]);
 echo "ok";
 
 } else if (isset($_GET["success"]) && $_GET["success"] == "result"){
