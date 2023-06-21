@@ -66,6 +66,12 @@ $id = $_GET["us"];
                  <div class="col col-md-12 col-sm-12 col-xs-12">
                  	<?=v_preg_res::preguntas_carreras(7, $id);?>
                  </div>
+                 <div class="col col-md-12 col-sm-12 col-xs-12">
+                    <?=v_preg_res::preguntas_carreras(8, $id);?>
+                 </div>
+                 <div class="col col-md-12 col-sm-12 col-xs-12">
+                    <?=v_preg_res::preguntas_carreras(9, $id);?>
+                 </div>
 
                  <div class="col col-md-12 col-sm-12 col-xs-12" align="justify">
                  	<blockquote>
