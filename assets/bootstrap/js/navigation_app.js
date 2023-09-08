@@ -131,7 +131,7 @@
     function instruccion(inst){
         $.ajax({
             type: "POST",
-            url: "_include/modules/instrucciones.php?serie="+inst+".php",
+            url: "_include/modules/instrucciones.php?serie="+inst,
          }).done(function( data ) {
             $("#session").html('<h2>Instrucciones <small>Sistema de pruebas Psicométricas</small></h2><div class="clearfix"></div>');
             $("#message").hide();

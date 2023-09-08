@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 20, 2023 at 10:00 PM
--- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- Generation Time: Sep 07, 2023 at 09:12 PM
+-- Server version: 8.0.33
+-- PHP Version: 8.0.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,17 +34,10 @@ CREATE TABLE `tbl_app1_res_us` (
   `app1_puntuacion` int NOT NULL DEFAULT '0',
   `app1_edad_mental` int DEFAULT NULL,
   `app1_res_fin` decimal(3,0) DEFAULT '0',
-  `app1_nivel_txt` varchar(30) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `app1_nivel_txt` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `app1_fec_inicio` datetime NOT NULL,
   `app1_status` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
-
---
--- Dumping data for table `tbl_app1_res_us`
---
-
-INSERT INTO `tbl_app1_res_us` (`app1_id`, `us_id`, `app1_avance`, `app1_puntuacion`, `app1_edad_mental`, `app1_res_fin`, `app1_nivel_txt`, `app1_fec_inicio`, `app1_status`) VALUES
-(1, 2, 100, 9, 132, '75', 'TERMINO MEDIO', '2018-01-15 13:55:12', 1);
 
 -- --------------------------------------------------------
 
@@ -73,13 +66,6 @@ CREATE TABLE `tbl_app2_rangos` (
   `rangoq4` int NOT NULL,
   `fec_term` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
-
---
--- Dumping data for table `tbl_app2_rangos`
---
-
-INSERT INTO `tbl_app2_rangos` (`ran_id`, `us_id`, `rangoa`, `rangob`, `rangoc`, `rangoe`, `rangof`, `rangog`, `rangoh`, `rangoi`, `rangol`, `rangom`, `rangon`, `rangoo`, `rangoq1`, `rangoq2`, `rangoq3`, `rangoq4`, `fec_term`) VALUES
-(1, 2, 8, 4, 12, 12, 13, 8, 12, 11, 7, 12, 11, 20, 5, 6, 10, 12, '2018-01-15 14:01:20');
 
 -- --------------------------------------------------------
 
@@ -272,13 +258,6 @@ CREATE TABLE `tbl_app2_resultados` (
   `185b` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
---
--- Dumping data for table `tbl_app2_resultados`
---
-
-INSERT INTO `tbl_app2_resultados` (`res_id`, `us_id`, `3a`, `4a`, `5a`, `6b`, `7b`, `8a`, `9b`, `10a`, `11b`, `12b`, `13a`, `14b`, `15b`, `16a`, `17a`, `18b`, `19b`, `20a`, `21a`, `22b`, `23a`, `24a`, `25b`, `26a`, `27a`, `28b`, `29a`, `30a`, `31b`, `32b`, `33a`, `34b`, `35a`, `36a`, `37b`, `39b`, `40b`, `41a`, `42a`, `43b`, `44b`, `45a`, `46a`, `47b`, `48a`, `49b`, `50b`, `51a`, `52a`, `53b`, `54b`, `55a`, `56b`, `57b`, `58a`, `59b`, `60a`, `61a`, `62b`, `63a`, `64a`, `65b`, `66a`, `67a`, `68b`, `69b`, `70a`, `71b`, `72b`, `73a`, `74b`, `75b`, `76a`, `77b`, `78b`, `79a`, `80a`, `81b`, `82a`, `83a`, `84b`, `85a`, `86a`, `87b`, `88a`, `89a`, `90b`, `91b`, `92a`, `93b`, `94b`, `95a`, `96b`, `97b`, `98a`, `99b`, `100b`, `101a`, `102b`, `103b`, `104a`, `105a`, `106b`, `107a`, `108a`, `109b`, `110a`, `111a`, `112b`, `113a`, `114a`, `115b`, `116b`, `117a`, `118b`, `119b`, `120a`, `121b`, `122b`, `123a`, `124b`, `125b`, `126a`, `127b`, `128b`, `129a`, `130a`, `131b`, `132a`, `133a`, `134b`, `135a`, `136a`, `137b`, `138b`, `139a`, `140b`, `141b`, `142a`, `143b`, `144b`, `145a`, `146b`, `147a`, `148a`, `149b`, `150b`, `151a`, `152b`, `153b`, `154a`, `156b`, `157a`, `158a`, `159b`, `160b`, `161a`, `162b`, `163b`, `164a`, `165b`, `166b`, `167a`, `168b`, `169a`, `170a`, `171b`, `172a`, `173a`, `174b`, `175b`, `176a`, `177b`, `178b`, `179a`, `181b`, `182a`, `183a`, `184b`, `185b`) VALUES
-(1, 2, 0, 2, 0, 0, 2, 0, 2, 2, 0, 2, 0, 0, 0, 0, 2, 2, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 2, 2, 0, 0, 1, 1, 2, 2, 0, 1, 2, 1, 0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 2, 2, 0, 2, 0, 0, 1, 1, 0, 1, 1, 2, 0, 2, 2, 2, 0, 0, 2, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 2, 2, 2, 0, 0, 0, 2, 2, 0, 2, 0, 1, 2, 1, 1, 1, 1, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 0, 2, 0, 0, 2, 0, 2, 2, 0, 2, 2, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 2, 2, 0, 0, 2, 0, 2, 0, 2, 0, 2, 2, 0, 2, 1, 1, 2, 1, 1, 2, 0, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -287,9 +266,9 @@ INSERT INTO `tbl_app2_resultados` (`res_id`, `us_id`, `3a`, `4a`, `5a`, `6b`, `7
 
 CREATE TABLE `tbl_carreras` (
   `car_id` int NOT NULL,
-  `car_nombre` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `car_tipo` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `car_sigla` varchar(30) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `car_nombre` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `car_tipo` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `car_sigla` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `car_status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
@@ -305,8 +284,9 @@ INSERT INTO `tbl_carreras` (`car_id`, `car_nombre`, `car_tipo`, `car_sigla`, `ca
 (5, 'LICENCIATURA EN ADMINISTRACION', 'LIC', 'L.A. (Administraci&oacute;n)', 1),
 (6, 'LICENCIATURA EN GASTRONOMIA', 'LIC', 'L.G. (Gastronom&iacute;a)', 1),
 (7, 'LICENCIATURA EN TURISMO', 'LIC', 'L.T. (Turismo)', 1),
-(8, 'INGENIERIA EN ANIMACION DIGITAL Y EFECTOS VISUALES', 'ING', 'I.AD.EF (ANIMACION DIGITAL)', 1),
-(9, 'CONTADOR PUBLICO', 'LIC', 'C.P. (Contador Publico)', 1);
+(8, 'INGENIERIA EN ANIMACION DIGITAL Y EFECTOS VISUALES', 'ING', 'I.A.D.E.V. (Animaci&oacute;n)', 1),
+(9, 'CONTADOR PUBLICO', 'LIC', 'C.P. (Contador Publico)', 1),
+(10, 'INGENIERIA FERROVIARIA', 'ING', 'I.F. (Ferroviaria)', 1);
 
 -- --------------------------------------------------------
 
@@ -318,7 +298,7 @@ CREATE TABLE `tbl_notificaciones` (
   `not_id` int NOT NULL,
   `us_id` int NOT NULL,
   `rol_id` int NOT NULL,
-  `not_mensaje` varchar(100) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `not_mensaje` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `not_timestamp` datetime NOT NULL,
   `not_status` int NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
@@ -331,7 +311,7 @@ CREATE TABLE `tbl_notificaciones` (
 
 CREATE TABLE `tbl_preguntas_app3` (
   `pg_id` int NOT NULL,
-  `pg_txt_preg` varchar(500) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `pg_txt_preg` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `car_id` int NOT NULL,
   `pg_status` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
@@ -446,18 +426,6 @@ CREATE TABLE `tbl_res_pg_app3` (
   `res_status` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
---
--- Dumping data for table `tbl_res_pg_app3`
---
-
-INSERT INTO `tbl_res_pg_app3` (`app3_id`, `us_id`, `car_id`, `p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `p9`, `p10`, `resultado`, `res_status`) VALUES
-(1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 1),
-(2, 2, 3, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 9, 1),
-(3, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 9, 1),
-(4, 2, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 1),
-(5, 2, 6, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 8, 1),
-(6, 2, 7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -466,9 +434,9 @@ INSERT INTO `tbl_res_pg_app3` (`app3_id`, `us_id`, `car_id`, `p1`, `p2`, `p3`, `
 
 CREATE TABLE `tbl_roles` (
   `rol_id` int NOT NULL,
-  `rol_nombre` varchar(30) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `rol_nombre` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `rol_status` tinyint(1) NOT NULL,
-  `rol_cv_txt` varchar(15) COLLATE utf8mb4_spanish_ci NOT NULL
+  `rol_cv_txt` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -476,9 +444,9 @@ CREATE TABLE `tbl_roles` (
 --
 
 INSERT INTO `tbl_roles` (`rol_id`, `rol_nombre`, `rol_status`, `rol_cv_txt`) VALUES
-(1, 'ADMINISTRADOR', 1, 'ROOT2017'),
-(2, 'INVITADO', 1, 'ITSE*2017'),
-(3, 'ALUMNO', 1, 'ITSE2018');
+(1, 'ADMINISTRADOR', 1, 'ROOT2023'),
+(2, 'INVITADO', 1, 'ITSE*2023'),
+(3, 'ALUMNO', 1, 'ITSE2023');
 
 -- --------------------------------------------------------
 
@@ -489,24 +457,24 @@ INSERT INTO `tbl_roles` (`rol_id`, `rol_nombre`, `rol_status`, `rol_cv_txt`) VAL
 CREATE TABLE `tbl_serie1_app1` (
   `id_serie1_app1` int NOT NULL,
   `us_id` int NOT NULL,
-  `s1_app1_p1` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s1_app1_p2` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s1_app1_p3` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s1_app1_p4` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s1_app1_p5` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s1_app1_p6` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s1_app1_p7` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s1_app1_p8` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s1_app1_p9` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s1_app1_p10` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s1_app1_p11` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s1_app1_p12` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s1_app1_p13` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s1_app1_p14` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s1_app1_p15` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s1_app1_p16` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s1_app1_res` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s1_app1_status` tinyint(1) NOT NULL
+  `s1_app1_p1` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s1_app1_p2` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s1_app1_p3` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s1_app1_p4` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s1_app1_p5` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s1_app1_p6` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s1_app1_p7` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s1_app1_p8` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s1_app1_p9` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s1_app1_p10` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s1_app1_p11` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s1_app1_p12` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s1_app1_p13` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s1_app1_p14` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s1_app1_p15` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s1_app1_p16` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s1_app1_res` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s1_app1_status` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -514,8 +482,7 @@ CREATE TABLE `tbl_serie1_app1` (
 --
 
 INSERT INTO `tbl_serie1_app1` (`id_serie1_app1`, `us_id`, `s1_app1_p1`, `s1_app1_p2`, `s1_app1_p3`, `s1_app1_p4`, `s1_app1_p5`, `s1_app1_p6`, `s1_app1_p7`, `s1_app1_p8`, `s1_app1_p9`, `s1_app1_p10`, `s1_app1_p11`, `s1_app1_p12`, `s1_app1_p13`, `s1_app1_p14`, `s1_app1_p15`, `s1_app1_p16`, `s1_app1_res`, `s1_app1_status`) VALUES
-(1, 1, 'b', 'a', 'b', 'a', 'b', 'd', 'c', 'a', 'c', 'c', 'c', 'b', 'b', 'c', 'a', 'c', '16', 1),
-(2, 2, 'a', 'b', 'a', 'a', 'd', 'd', 'd', 'd', 'a', 'a', 'a', 'b', 'a', 'a', 'a', 'a', '4', 1);
+(1, 1, 'b', 'a', 'b', 'a', 'b', 'd', 'c', 'a', 'c', 'c', 'c', 'b', 'b', 'c', 'a', 'c', '16', 1);
 
 -- --------------------------------------------------------
 
@@ -526,19 +493,19 @@ INSERT INTO `tbl_serie1_app1` (`id_serie1_app1`, `us_id`, `s1_app1_p1`, `s1_app1
 CREATE TABLE `tbl_serie2_app1` (
   `id_serie2_app1` int NOT NULL,
   `us_id` int NOT NULL,
-  `s2_app1_p1` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s2_app1_p2` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s2_app1_p3` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s2_app1_p4` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s2_app1_p5` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s2_app1_p6` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s2_app1_p7` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s2_app1_p8` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s2_app1_p9` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s2_app1_p10` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s2_app1_p11` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s2_app1_res` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s2_app1_status` tinyint(1) NOT NULL
+  `s2_app1_p1` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s2_app1_p2` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s2_app1_p3` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s2_app1_p4` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s2_app1_p5` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s2_app1_p6` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s2_app1_p7` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s2_app1_p8` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s2_app1_p9` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s2_app1_p10` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s2_app1_p11` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s2_app1_res` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s2_app1_status` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -546,8 +513,7 @@ CREATE TABLE `tbl_serie2_app1` (
 --
 
 INSERT INTO `tbl_serie2_app1` (`id_serie2_app1`, `us_id`, `s2_app1_p1`, `s2_app1_p2`, `s2_app1_p3`, `s2_app1_p4`, `s2_app1_p5`, `s2_app1_p6`, `s2_app1_p7`, `s2_app1_p8`, `s2_app1_p9`, `s2_app1_p10`, `s2_app1_p11`, `s2_app1_res`, `s2_app1_status`) VALUES
-(1, 1, 'c', 'a', 'b', 'c', 'c', 'b', 'c', 'c', 'b', 'a', 'b', '22', 1),
-(2, 2, 'a', 'a', 'a', 'b', 'a', 'b', 'b', 'b', 'a', 'a', 'a', '6', 1);
+(1, 1, 'c', 'a', 'b', 'c', 'c', 'b', 'c', 'c', 'b', 'a', 'b', '22', 1);
 
 -- --------------------------------------------------------
 
@@ -558,38 +524,38 @@ INSERT INTO `tbl_serie2_app1` (`id_serie2_app1`, `us_id`, `s2_app1_p1`, `s2_app1
 CREATE TABLE `tbl_serie3_app1` (
   `id_serie3_app1` int NOT NULL,
   `us_id` int NOT NULL,
-  `s3_app1_p1` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p2` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p3` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p4` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p5` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p6` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p7` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p8` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p9` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p10` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p11` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p12` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p13` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p14` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p15` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p16` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p17` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p18` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p19` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p20` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p21` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p22` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p23` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p24` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p25` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p26` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p27` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p28` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p29` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_p30` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_res` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s3_app1_status` tinyint(1) NOT NULL
+  `s3_app1_p1` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p2` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p3` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p4` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p5` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p6` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p7` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p8` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p9` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p10` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p11` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p12` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p13` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p14` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p15` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p16` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p17` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p18` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p19` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p20` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p21` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p22` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p23` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p24` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p25` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p26` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p27` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p28` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p29` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_p30` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_res` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s3_app1_status` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -597,8 +563,7 @@ CREATE TABLE `tbl_serie3_app1` (
 --
 
 INSERT INTO `tbl_serie3_app1` (`id_serie3_app1`, `us_id`, `s3_app1_p1`, `s3_app1_p2`, `s3_app1_p3`, `s3_app1_p4`, `s3_app1_p5`, `s3_app1_p6`, `s3_app1_p7`, `s3_app1_p8`, `s3_app1_p9`, `s3_app1_p10`, `s3_app1_p11`, `s3_app1_p12`, `s3_app1_p13`, `s3_app1_p14`, `s3_app1_p15`, `s3_app1_p16`, `s3_app1_p17`, `s3_app1_p18`, `s3_app1_p19`, `s3_app1_p20`, `s3_app1_p21`, `s3_app1_p22`, `s3_app1_p23`, `s3_app1_p24`, `s3_app1_p25`, `s3_app1_p26`, `s3_app1_p27`, `s3_app1_p28`, `s3_app1_p29`, `s3_app1_p30`, `s3_app1_res`, `s3_app1_status`) VALUES
-(1, 1, 'o', 'i', 'o', 'o', 'o', 'o', 'i', 'i', 'o', 'i', 'o', 'o', 'o', 'i', 'o', 'o', 'i', 'o', 'i', 'o', 'o', 'o', 'i', 'i', 'i', 'o', 'i', 'i', 'o', 'i', '30', 1),
-(2, 2, 'i', 'i', 'o', 'o', 'o', 'o', 'o', 'o', 'i', 'o', 'o', 'i', 'i', 'i', 'i', 'i', 'o', 'i', 'o', 'i', 'i', 'i', 'i', 'o', 'o', 'o', 'o', 'i', 'i', 'i', '-8', 1);
+(1, 1, 'o', 'i', 'o', 'o', 'o', 'o', 'i', 'i', 'o', 'i', 'o', 'o', 'o', 'i', 'o', 'o', 'i', 'o', 'i', 'o', 'o', 'o', 'i', 'i', 'i', 'o', 'i', 'i', 'o', 'i', '30', 1);
 
 -- --------------------------------------------------------
 
@@ -609,26 +574,26 @@ INSERT INTO `tbl_serie3_app1` (`id_serie3_app1`, `us_id`, `s3_app1_p1`, `s3_app1
 CREATE TABLE `tbl_serie4_app1` (
   `id_serie4_app1` int NOT NULL,
   `us_id` int NOT NULL,
-  `s4_app1_p1` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_p2` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_p3` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_p4` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_p5` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_p6` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_p7` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_p8` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_p9` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_p10` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_p11` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_p12` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_p13` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_p14` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_p15` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_p16` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_p17` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_p18` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_res` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s4_app1_status` tinyint(1) NOT NULL
+  `s4_app1_p1` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_p2` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_p3` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_p4` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_p5` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_p6` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_p7` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_p8` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_p9` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_p10` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_p11` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_p12` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_p13` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_p14` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_p15` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_p16` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_p17` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_p18` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_res` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s4_app1_status` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -636,8 +601,7 @@ CREATE TABLE `tbl_serie4_app1` (
 --
 
 INSERT INTO `tbl_serie4_app1` (`id_serie4_app1`, `us_id`, `s4_app1_p1`, `s4_app1_p2`, `s4_app1_p3`, `s4_app1_p4`, `s4_app1_p5`, `s4_app1_p6`, `s4_app1_p7`, `s4_app1_p8`, `s4_app1_p9`, `s4_app1_p10`, `s4_app1_p11`, `s4_app1_p12`, `s4_app1_p13`, `s4_app1_p14`, `s4_app1_p15`, `s4_app1_p16`, `s4_app1_p17`, `s4_app1_p18`, `s4_app1_res`, `s4_app1_status`) VALUES
-(1, 1, 'be', 'ac', 'cd', 'ac', 'be', 'ce', 'be', 'be', 'ab', 'ac', 'bc', 'ab', 'ce', 'ad', 'ab', 'be', 'ab', 'cd', '18', 1),
-(2, 2, 'd', 'c', 'c', 'c', 'c', 'bc', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', '0', 1);
+(1, 1, 'be', 'ac', 'cd', 'ac', 'be', 'ce', 'be', 'be', 'ab', 'ac', 'bc', 'ab', 'ce', 'ad', 'ab', 'be', 'ab', 'cd', '18', 1);
 
 -- --------------------------------------------------------
 
@@ -648,20 +612,20 @@ INSERT INTO `tbl_serie4_app1` (`id_serie4_app1`, `us_id`, `s4_app1_p1`, `s4_app1
 CREATE TABLE `tbl_serie5_app1` (
   `id_serie5_app1` int NOT NULL,
   `us_id` int NOT NULL,
-  `s5_app1_p1` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s5_app1_p2` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s5_app1_p3` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s5_app1_p4` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s5_app1_p5` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s5_app1_p6` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s5_app1_p7` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s5_app1_p8` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s5_app1_p9` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s5_app1_p10` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s5_app1_p11` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s5_app1_p12` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s5_app1_res` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s5_app1_status` tinyint(1) NOT NULL
+  `s5_app1_p1` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s5_app1_p2` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s5_app1_p3` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s5_app1_p4` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s5_app1_p5` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s5_app1_p6` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s5_app1_p7` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s5_app1_p8` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s5_app1_p9` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s5_app1_p10` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s5_app1_p11` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s5_app1_p12` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s5_app1_res` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s5_app1_status` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -669,8 +633,7 @@ CREATE TABLE `tbl_serie5_app1` (
 --
 
 INSERT INTO `tbl_serie5_app1` (`id_serie5_app1`, `us_id`, `s5_app1_p1`, `s5_app1_p2`, `s5_app1_p3`, `s5_app1_p4`, `s5_app1_p5`, `s5_app1_p6`, `s5_app1_p7`, `s5_app1_p8`, `s5_app1_p9`, `s5_app1_p10`, `s5_app1_p11`, `s5_app1_p12`, `s5_app1_res`, `s5_app1_status`) VALUES
-(1, 1, '20', '11', '50', '50', '12', '18', '500', '2', '28', '360', '2', '25', '24', 1),
-(2, 2, 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', '0', 1);
+(1, 1, '20', '11', '50', '50', '12', '18', '500', '2', '28', '360', '2', '25', '24', 1);
 
 -- --------------------------------------------------------
 
@@ -681,28 +644,28 @@ INSERT INTO `tbl_serie5_app1` (`id_serie5_app1`, `us_id`, `s5_app1_p1`, `s5_app1
 CREATE TABLE `tbl_serie6_app1` (
   `id_serie6_app1` int NOT NULL,
   `us_id` int NOT NULL,
-  `s6_app1_p1` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p2` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p3` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p4` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p5` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p6` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p7` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p8` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p9` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p10` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p11` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p12` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p13` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p14` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p15` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p16` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p17` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p18` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p19` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_p20` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_res` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s6_app1_status` tinyint(1) NOT NULL
+  `s6_app1_p1` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p2` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p3` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p4` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p5` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p6` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p7` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p8` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p9` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p10` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p11` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p12` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p13` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p14` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p15` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p16` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p17` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p18` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p19` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_p20` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_res` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s6_app1_status` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -710,8 +673,7 @@ CREATE TABLE `tbl_serie6_app1` (
 --
 
 INSERT INTO `tbl_serie6_app1` (`id_serie6_app1`, `us_id`, `s6_app1_p1`, `s6_app1_p2`, `s6_app1_p3`, `s6_app1_p4`, `s6_app1_p5`, `s6_app1_p6`, `s6_app1_p7`, `s6_app1_p8`, `s6_app1_p9`, `s6_app1_p10`, `s6_app1_p11`, `s6_app1_p12`, `s6_app1_p13`, `s6_app1_p14`, `s6_app1_p15`, `s6_app1_p16`, `s6_app1_p17`, `s6_app1_p18`, `s6_app1_p19`, `s6_app1_p20`, `s6_app1_res`, `s6_app1_status`) VALUES
-(1, 1, 'si', 'no', 'no', 'si', 'si', 'no', 'no', 'no', 'si', 'si', 'no', 'no', 'no', 'si', 'no', 'no', 'si', 'no', 'si', 'si', '20', 1),
-(2, 2, 'si', 'si', 'no', 'no', 'si', 'si', 'si', 'si', 'si', 'no', 'no', 'no', 'no', 'si', 'si', 'si', 'si', 'si', 'no', 'no', '-2', 1);
+(1, 1, 'si', 'no', 'no', 'si', 'si', 'no', 'no', 'no', 'si', 'si', 'no', 'no', 'no', 'si', 'no', 'no', 'si', 'no', 'si', 'si', '20', 1);
 
 -- --------------------------------------------------------
 
@@ -722,28 +684,28 @@ INSERT INTO `tbl_serie6_app1` (`id_serie6_app1`, `us_id`, `s6_app1_p1`, `s6_app1
 CREATE TABLE `tbl_serie7_app1` (
   `id_serie7_app1` int NOT NULL,
   `us_id` int NOT NULL,
-  `s7_app1_p1` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p2` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p3` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p4` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p5` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p6` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p7` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p8` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p9` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p10` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p11` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p12` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p13` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p14` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p15` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p16` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p17` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p18` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p19` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_p20` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_res` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s7_app1_status` tinyint(1) NOT NULL
+  `s7_app1_p1` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p2` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p3` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p4` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p5` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p6` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p7` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p8` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p9` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p10` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p11` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p12` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p13` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p14` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p15` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p16` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p17` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p18` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p19` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_p20` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_res` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s7_app1_status` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -751,8 +713,7 @@ CREATE TABLE `tbl_serie7_app1` (
 --
 
 INSERT INTO `tbl_serie7_app1` (`id_serie7_app1`, `us_id`, `s7_app1_p1`, `s7_app1_p2`, `s7_app1_p3`, `s7_app1_p4`, `s7_app1_p5`, `s7_app1_p6`, `s7_app1_p7`, `s7_app1_p8`, `s7_app1_p9`, `s7_app1_p10`, `s7_app1_p11`, `s7_app1_p12`, `s7_app1_p13`, `s7_app1_p14`, `s7_app1_p15`, `s7_app1_p16`, `s7_app1_p17`, `s7_app1_p18`, `s7_app1_p19`, `s7_app1_p20`, `s7_app1_res`, `s7_app1_status`) VALUES
-(1, 1, 'a', 'a', 'c', 'b', 'b', 'd', 'c', 'a', 'a', 'd', 'b', 'c', 'b', 'c', 'c', 'c', 'b', 'c', 'c', 'c', '20', 1),
-(2, 2, 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'b', 'b', 'b', 'a', 'a', 'd', 'a', 'b', 'a', '5', 1);
+(1, 1, 'a', 'a', 'c', 'b', 'b', 'd', 'c', 'a', 'a', 'd', 'b', 'c', 'b', 'c', 'c', 'c', 'b', 'c', 'c', 'c', '20', 1);
 
 -- --------------------------------------------------------
 
@@ -763,25 +724,25 @@ INSERT INTO `tbl_serie7_app1` (`id_serie7_app1`, `us_id`, `s7_app1_p1`, `s7_app1
 CREATE TABLE `tbl_serie8_app1` (
   `id_serie8_app1` int NOT NULL,
   `us_id` int NOT NULL,
-  `s8_app1_p1` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s8_app1_p2` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s8_app1_p3` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s8_app1_p4` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s8_app1_p5` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s8_app1_p6` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s8_app1_p7` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s8_app1_p8` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s8_app1_p9` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s8_app1_p10` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s8_app1_p11` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s8_app1_p12` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s8_app1_p13` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s8_app1_p14` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s8_app1_p15` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s8_app1_p16` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s8_app1_p17` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s8_app1_res` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s8_app1_status` tinyint(1) NOT NULL
+  `s8_app1_p1` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s8_app1_p2` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s8_app1_p3` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s8_app1_p4` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s8_app1_p5` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s8_app1_p6` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s8_app1_p7` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s8_app1_p8` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s8_app1_p9` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s8_app1_p10` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s8_app1_p11` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s8_app1_p12` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s8_app1_p13` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s8_app1_p14` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s8_app1_p15` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s8_app1_p16` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s8_app1_p17` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s8_app1_res` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s8_app1_status` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -789,8 +750,7 @@ CREATE TABLE `tbl_serie8_app1` (
 --
 
 INSERT INTO `tbl_serie8_app1` (`id_serie8_app1`, `us_id`, `s8_app1_p1`, `s8_app1_p2`, `s8_app1_p3`, `s8_app1_p4`, `s8_app1_p5`, `s8_app1_p6`, `s8_app1_p7`, `s8_app1_p8`, `s8_app1_p9`, `s8_app1_p10`, `s8_app1_p11`, `s8_app1_p12`, `s8_app1_p13`, `s8_app1_p14`, `s8_app1_p15`, `s8_app1_p16`, `s8_app1_p17`, `s8_app1_res`, `s8_app1_status`) VALUES
-(1, 1, 'v', 'f', 'v', 'v', 'v', 'f', 'f', 'v', 'v', 'f', 'f', 'f', 'v', 'v', 'v', 'v', 'f', '17', 1),
-(2, 2, 'v', 'v', 'v', 'f', 'f', 'v', 'f', 'f', 'f', 'f', 'v', 'f', 'f', 'v', 'v', 'v', 'v', '-1', 1);
+(1, 1, 'v', 'f', 'v', 'v', 'v', 'f', 'f', 'v', 'v', 'f', 'f', 'f', 'v', 'v', 'v', 'v', 'f', '17', 1);
 
 -- --------------------------------------------------------
 
@@ -801,26 +761,26 @@ INSERT INTO `tbl_serie8_app1` (`id_serie8_app1`, `us_id`, `s8_app1_p1`, `s8_app1
 CREATE TABLE `tbl_serie9_app1` (
   `id_serie9_app1` int NOT NULL,
   `us_id` int NOT NULL,
-  `s9_app1_p1` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_p2` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_p3` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_p4` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_p5` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_p6` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_p7` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_p8` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_p9` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_p10` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_p11` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_p12` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_p13` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_p14` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_p15` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_p16` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_p17` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_p18` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_res` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s9_app1_status` tinyint(1) NOT NULL
+  `s9_app1_p1` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_p2` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_p3` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_p4` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_p5` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_p6` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_p7` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_p8` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_p9` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_p10` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_p11` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_p12` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_p13` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_p14` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_p15` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_p16` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_p17` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_p18` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_res` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s9_app1_status` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -828,8 +788,7 @@ CREATE TABLE `tbl_serie9_app1` (
 --
 
 INSERT INTO `tbl_serie9_app1` (`id_serie9_app1`, `us_id`, `s9_app1_p1`, `s9_app1_p2`, `s9_app1_p3`, `s9_app1_p4`, `s9_app1_p5`, `s9_app1_p6`, `s9_app1_p7`, `s9_app1_p8`, `s9_app1_p9`, `s9_app1_p10`, `s9_app1_p11`, `s9_app1_p12`, `s9_app1_p13`, `s9_app1_p14`, `s9_app1_p15`, `s9_app1_p16`, `s9_app1_p17`, `s9_app1_p18`, `s9_app1_res`, `s9_app1_status`) VALUES
-(1, 1, 'd', 'e', 'c', 'a', 'c', 'd', 'e', 'a', 'd', 'c', 'e', 'e', 'a', 'e', 'e', 'a', 'd', 'e', '18', 1),
-(2, 2, 'a', 'e', 'a', 'a', 'a', 'e', 'e', 'e', 'e', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '5', 1);
+(1, 1, 'd', 'e', 'c', 'a', 'c', 'd', 'e', 'a', 'd', 'c', 'e', 'e', 'a', 'e', 'e', 'a', 'd', 'e', '18', 1);
 
 -- --------------------------------------------------------
 
@@ -840,19 +799,19 @@ INSERT INTO `tbl_serie9_app1` (`id_serie9_app1`, `us_id`, `s9_app1_p1`, `s9_app1
 CREATE TABLE `tbl_serie10_app1` (
   `id_serie10_app1` int NOT NULL,
   `us_id` int NOT NULL,
-  `s10_app1_p1` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s10_app1_p2` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s10_app1_p3` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s10_app1_p4` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s10_app1_p5` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s10_app1_p6` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s10_app1_p7` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s10_app1_p8` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s10_app1_p9` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s10_app1_p10` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s10_app1_p11` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s10_app1_res` varchar(10) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `s10_app1_status` tinyint(1) NOT NULL
+  `s10_app1_p1` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s10_app1_p2` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s10_app1_p3` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s10_app1_p4` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s10_app1_p5` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s10_app1_p6` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s10_app1_p7` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s10_app1_p8` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s10_app1_p9` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s10_app1_p10` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s10_app1_p11` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s10_app1_res` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `s10_app1_status` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -860,8 +819,7 @@ CREATE TABLE `tbl_serie10_app1` (
 --
 
 INSERT INTO `tbl_serie10_app1` (`id_serie10_app1`, `us_id`, `s10_app1_p1`, `s10_app1_p2`, `s10_app1_p3`, `s10_app1_p4`, `s10_app1_p5`, `s10_app1_p6`, `s10_app1_p7`, `s10_app1_p8`, `s10_app1_p9`, `s10_app1_p10`, `s10_app1_p11`, `s10_app1_res`, `s10_app1_status`) VALUES
-(1, 1, '21', '3338', '64128', '22', '1313 1/4', '2021', '1/41/8', '85.394.3', '68', '3334', '25125', '22', 1),
-(2, 2, 'nn', 'nn', 'nn', 'nn', 'nn', 'nn', 'nn', 'nn', 'nn', 'nn', 'nn', '0', 1);
+(1, 1, '21', '3338', '64128', '22', '1313 1/4', '2021', '1/41/8', '85.394.3', '68', '3334', '25125', '22', 1);
 
 -- --------------------------------------------------------
 
@@ -884,10 +842,10 @@ CREATE TABLE `tbl_sessiones_temp` (
 
 CREATE TABLE `tbl_usuarios` (
   `us_id` int NOT NULL,
-  `us_nombre` varchar(100) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `us_genero` varchar(2) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `us_alias` varchar(18) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `us_password` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `us_nombre` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `us_genero` varchar(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `us_alias` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `us_password` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `car_id` int NOT NULL,
   `rol_id` int NOT NULL,
   `us_fec_reg` datetime NOT NULL,
@@ -899,9 +857,7 @@ CREATE TABLE `tbl_usuarios` (
 --
 
 INSERT INTO `tbl_usuarios` (`us_id`, `us_nombre`, `us_genero`, `us_alias`, `us_password`, `car_id`, `rol_id`, `us_fec_reg`, `us_status`) VALUES
-(1, 'ROOT ADMIN', 'H', 'ROOT', '1f32aa4c9a1d2ea010adcf2348166a04', 1, 1, '2017-09-20 01:00:00', 1),
-(2, 'NESTOR IVAN ROMERO TRUJILLO', 'H', 'ROTN940224', '1f32aa4c9a1d2ea010adcf2348166a04', 2, 3, '2018-01-13 12:53:25', 1),
-(3, 'ABIMAEL MÉNDEZ ZACARÍAS', 'H', '220204022', 'b36c2d8053f192a132b8f33931836d20', 2, 3, '2023-06-16 15:50:28', 1);
+(1, 'ROOT ADMIN', 'H', 'ROOT', '1f32aa4c9a1d2ea010adcf2348166a04', 1, 1, '2017-09-20 01:00:00', 1);
 
 --
 -- Indexes for dumped tables
@@ -1062,19 +1018,19 @@ ALTER TABLE `tbl_app1_res_us`
 -- AUTO_INCREMENT for table `tbl_app2_rangos`
 --
 ALTER TABLE `tbl_app2_rangos`
-  MODIFY `ran_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ran_id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_app2_resultados`
 --
 ALTER TABLE `tbl_app2_resultados`
-  MODIFY `res_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `res_id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_carreras`
 --
 ALTER TABLE `tbl_carreras`
-  MODIFY `car_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `car_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_notificaciones`
@@ -1092,7 +1048,7 @@ ALTER TABLE `tbl_preguntas_app3`
 -- AUTO_INCREMENT for table `tbl_res_pg_app3`
 --
 ALTER TABLE `tbl_res_pg_app3`
-  MODIFY `app3_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `app3_id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_roles`
@@ -1104,13 +1060,13 @@ ALTER TABLE `tbl_roles`
 -- AUTO_INCREMENT for table `tbl_serie1_app1`
 --
 ALTER TABLE `tbl_serie1_app1`
-  MODIFY `id_serie1_app1` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_serie1_app1` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_serie2_app1`
 --
 ALTER TABLE `tbl_serie2_app1`
-  MODIFY `id_serie2_app1` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_serie2_app1` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_serie3_app1`
@@ -1164,7 +1120,7 @@ ALTER TABLE `tbl_serie10_app1`
 -- AUTO_INCREMENT for table `tbl_sessiones_temp`
 --
 ALTER TABLE `tbl_sessiones_temp`
-  MODIFY `ses_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ses_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tbl_usuarios`

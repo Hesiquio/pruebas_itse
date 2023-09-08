@@ -29,7 +29,7 @@
                         </li>
                         <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Información Sesiones</a>
                         </li>
-                        <li id="not" role="presentation"><a href="#" onclick="instruccion(1)"  role="tab" data-toggle="tab" aria-expanded="false"><b>Iniciar Prueba</b> <i class="fa fa-child"></i></a><!--id="ir_app1session1"-->
+                        <li id="not" role="presentation"><a href="#" onclick="instruccion(1)"  role="tab" data-toggle="tab" aria-expanded="false"><b>IniciarPrueba</b> <i class="fa fa-child"></i></a><!--id="ir_app1session1"-->
                         </li>
                       </ul>
                       <div id="myTabContent" class="tab-content">
@@ -38,7 +38,7 @@
                           <br>
                             <p><h2><span class="fa fa-info-circle"></span> <b>Información</b></h2></p>
                             <blockquote>
-                                <div align="justify">
+                                <div>
                                   <p>
                                      La prueba tiene como objetivo primordial determinar tu coeficiente intelectual
                                     Esta es una prueba de habilidad mental y consta de diez series de preguntas diferentes.
@@ -58,7 +58,7 @@
                           <div class="col col-md-12 col-ms-12 col-xs-12">
                             <br>
                             <blockquote>
-                              <div class="col col-md-12 col-sm-12 col-xs-12" align="center">
+                              <div class="col col-md-12 col-sm-12 col-xs-12" class="centered">
                                 La prueba está constituida por diez series, cada serie tiene un tiempo límite y la aplicación total lleva aproximadamente 40 minutos:
                               </div>
                             </blockquote>
@@ -66,7 +66,7 @@
                           <div class="col col-md-12 col-ms-12 col-xs-12">
                             <br>
                             <div class="col col-md-4 col-sm-12 col-xs-12">&nbsp;</div>
-                              <div class="col col-md-4 col-sm-12 col-xs-12" align="center">
+                              <div class="col col-md-4 col-sm-12 col-xs-12">
                                 <table width="100%" align="center" class=" table table-striped table-bordered">
                                   <thead>
                                     <tr>
@@ -77,61 +77,61 @@
                                   </thead>
                                   <tbody>
                                     <tr>
-                                      <td align="center">I</td>
-                                      <td align="center"> 2 Minutos </td>
-                                      <td align="center">16</td>
+                                      <td>I</td>
+                                      <td> 2 Minutos </td>
+                                      <td>16</td>
                                     </tr>
                                     <tr>
-                                      <td align="center">II</td>
-                                      <td align="center"> 2 Minutos </td>
-                                      <td align="center">11</td>
+                                      <td>II</td>
+                                      <td> 2 Minutos </td>
+                                      <td>11</td>
                                     </tr>
                                     <tr>
-                                      <td align="center">III</td>
-                                      <td align="center"> 2 Minutos </td>
-                                      <td align="center">30</td>
+                                      <td>III</td>
+                                      <td> 2 Minutos </td>
+                                      <td>30</td>
                                     </tr>
                                     <tr>
-                                      <td align="center">IV</td>
-                                      <td align="center"> 3 Minutos </td>
-                                      <td align="center">18</td>
+                                      <td>IV</td>
+                                      <td> 3 Minutos </td>
+                                      <td>18</td>
                                     </tr>
                                     <tr>
-                                      <td align="center">V</td>
-                                      <td align="center"> 5 Minutos </td>
-                                      <td align="center">12</td>
+                                      <td>V</td>
+                                      <td> 5 Minutos </td>
+                                      <td>12</td>
                                     </tr>
                                     <tr>
-                                      <td align="center">VI</td>
-                                      <td align="center"> 2 Minutos </td>
-                                      <td align="center">20</td>
+                                      <td>VI</td>
+                                      <td> 2 Minutos </td>
+                                      <td>20</td>
                                     </tr>
                                     <tr>
-                                      <td align="center">VII</td>
-                                      <td align="center"> 2 Minutos </td>
-                                      <td align="center">20</td>
+                                      <td>VII</td>
+                                      <td> 2 Minutos </td>
+                                      <td>20</td>
                                     </tr>
                                     <tr>
-                                      <td align="center">VIII</td>
-                                      <td align="center"> 3 Minutos </td>
-                                      <td align="center">17</td>
+                                      <td>VIII</td>
+                                      <td> 3 Minutos </td>
+                                      <td>17</td>
                                     </tr>
                                     <tr>
-                                      <td align="center">IX</td>
-                                      <td align="center"> 2 Minutos </td>
-                                      <td align="center">18</td>
+                                      <td>IX</td>
+                                      <td> 2 Minutos </td>
+                                      <td>18</td>
                                     </tr>
                                     <tr>
-                                      <td align="center">X</td>
-                                      <td align="center"> 4 Minutos </td>
-                                      <td align="center">11</td>
+                                      <td>X</td>
+                                      <td> 4 Minutos </td>
+                                      <td>11</td>
                                     </tr>
                                   </tbody>
                                   <tfoot>
                                     <tr>
-                                      <td align="center"> <b>Total</b> </td>
-                                      <td align="center"> <b>27 Minutos</b> </td>
-                                      <td align="center"> <b>173</b> </td>
+                                      <td> <b>Total</b> </td>
+                                      <td> <b>27 Minutos</b> </td>
+                                      <td> <b>173</b> </td>
                                     </tr>
                                   </tfoot>
                                 </table>
@@ -153,17 +153,15 @@
                     
               </div>
             </div>
-            
-
             <script>
-             $( document ).ready(function() {
-                $('#not').attr('class', 'disabled');
-                //$('#not').attr('','');
-              });
-              $( "#activar" ).click(function() {
-                $('#not').removeAttr('class', 'disabled');
-                //$('.lanzar').attr('id', 'ir_app1session1');
-                //$('a[class="lanzar"]').attr('id', 'ir_app1session1');
-              });
+                $(document).ready(function() {
+                    // Al cargar la página, agregar la clase "disabled" al elemento con ID "not"
+                    $('#not').addClass('disabled');
 
+                    // Configurar el evento de clic en el elemento con ID "activar"
+                    $("#activar").click(function(event) {
+                        event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+                        $('#not').removeClass('disabled'); // Quitar la clase "disabled" del elemento con ID "not"
+                    });
+                });
             </script>
