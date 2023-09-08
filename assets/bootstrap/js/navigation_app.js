@@ -91,12 +91,10 @@
               });
         });
 
-
       });
   $('#mod_reg').click(function(){
       $.ajax({
           type: 'POST',
-
           url: '_include/modules/registros.php'
       }).done(function( data ) {
           $('#content_app').html(data);
@@ -105,17 +103,14 @@
 
   });
 
-
-
   function mod_perfil(us){
          $.ajax({
-                 type: 'POST',
-                 url: '_include/modules/config_perfil.php?profile='+us
+                 type: "POST",
+                 url: "_include/modules/config_perfil.php?profile="+us,
               }).done(function( data ) {
                   $('#content_app').html(data);
               });  
       }
-      
 
     /// navegacion o paginacion de las series
      function next_serie(page){
@@ -124,7 +119,6 @@
             url: "_include/modules/app1_serie"+page+".php",
          }).done(function( data ) {
             $('#content_app').html(data);
-
             }); 
     }
 
@@ -137,7 +131,6 @@
             $("#message").hide();
             $(".reloj").hide();
             $('#instruccion').html(data);
-
             }); 
     }
 
@@ -154,8 +147,6 @@
             $(".reloj").hide();
             $('#instruccion').html(data);
           }
-            
-
             }); 
     }
 

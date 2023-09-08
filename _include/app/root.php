@@ -76,9 +76,9 @@
               <div class="menu_section">
                 <h3>Perfil</h3>
                 <ul class="nav side-menu">
-                  <li><a href="#" id="" onclick="mod_perfil(<?=$_SESSION["session_root"]?>);"><i class="fa fa-user"></i> Configuracion & Registros </a></li>
+                  <li><a href="#" id="" onclick="mod_perfil(<?=$_SESSION["session_root"]?>);"><i class="fa fa-user"></i>Configuracion & Registros </a></li>
                   <!--<li><a href="#" id="app_a3"><i class="fa fa-list-alt"></i>REGISTROS</a></li>-->
-                  <!--\<li><a href="#" id="mod_config"><i class="fa fa-cogs"></i> Configuración de la APP</a></li>-->
+                  <!--\<li><a href="#" id="mod_reg"><i class="fa fa-cogs"></i> Configuración de la APP</a></li>-->
                 </ul>
               </div>
 
