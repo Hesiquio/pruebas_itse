@@ -29,7 +29,7 @@
                         </li>
                         <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Información Sesiones</a>
                         </li>
-                        <li id="not" role="presentation"><a href="#" onclick="instruccion(1)"  role="tab" data-toggle="tab" aria-expanded="false"><b>Iniciar Prueba</b> <i class="fa fa-child"></i></a><!--id="ir_app1session1"-->
+                        <li id="not" role="presentation"><a href="#" onclick="instruccion(1)"   role="tab" data-toggle="tab" aria-expanded="false"><b>Iniciar Prueba</b> <i class="fa fa-child"></i></a><!--id="ir_app1session1"-->
                         </li>
                       </ul>
                       <div id="myTabContent" class="tab-content">
