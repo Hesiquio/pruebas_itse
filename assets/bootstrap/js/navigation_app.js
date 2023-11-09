@@ -91,12 +91,10 @@
               });
         });
 
-
       });
   $('#mod_reg').click(function(){
       $.ajax({
           type: 'POST',
-
           url: '_include/modules/registros.php'
       }).done(function( data ) {
           $('#content_app').html(data);
@@ -105,17 +103,14 @@
 
   });
 
-
-
   function mod_perfil(us){
          $.ajax({
-                 type: 'POST',
-                 url: '_include/modules/config_perfil.php?profile='+us
+                 type: "POST",
+                 url: "_include/modules/config_perfil.php?profile="+us,
               }).done(function( data ) {
                   $('#content_app').html(data);
               });  
       }
-      
 
     /// navegacion o paginacion de las series
      function next_serie(page){
@@ -124,20 +119,18 @@
             url: "_include/modules/app1_serie"+page+".php",
          }).done(function( data ) {
             $('#content_app').html(data);
-
             }); 
     }
 
     function instruccion(inst){
         $.ajax({
             type: "POST",
-            url: "_include/modules/instrucciones.php?serie="+inst+".php",
+            url: "_include/modules/instrucciones.php?serie="+inst,
          }).done(function( data ) {
             $("#session").html('<h2>Instrucciones <small>Sistema de pruebas Psicométricas</small></h2><div class="clearfix"></div>');
             $("#message").hide();
             $(".reloj").hide();
             $('#instruccion').html(data);
-
             }); 
     }
 
@@ -154,8 +147,6 @@
             $(".reloj").hide();
             $('#instruccion').html(data);
           }
-            
-
             }); 
     }
 

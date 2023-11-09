@@ -49,17 +49,6 @@
 
   function alert_welcome($id_user, $show){
     include "_include/php/db/conexionDB.php";
-
-      try {
-          $con = new PDO('mysql:host=localhost;dbname=app_itse', 'root', '');
-
-          $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      }
-      catch(PDOException $e) {
-          echo 'Error al conectar Data_BASE '.$e->getMessage();
-      }
-
-
       date_default_timezone_set('America/Merida');
     $hoy = date("Y-m-d");
     if ($show == "true") {
@@ -79,16 +68,6 @@
 
   function modules_admin($id_user){
     include "_include/php/db/conexionDB.php";
-      try {
-          $con = new PDO('mysql:host=localhost;dbname=app_itse', 'root', '');
-
-          $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      }
-      catch(PDOException $e) {
-          echo 'Error al conectar Data_BASE '.$e->getMessage();
-      }
-
-
       $query = $con->prepare("SELECT tbl_roles.rol_nombre AS Rol, tbl_usuarios.rol_id AS IDRol 
                             FROM tbl_usuarios
                             INNER JOIN tbl_roles ON tbl_usuarios.rol_id = tbl_roles.rol_id
@@ -170,34 +149,22 @@
       $contador = $query->rowCount();
       echo($contador);
     }
-    
-
-
   }
 
     function app1_data($id_user,$data){
         include '_include/php/db/conexionDB.php';
-        $campos = array(); // Arreglo que almacenará el fetch () de cada campo seleccionado de  cada tabla
-        $sumar = array(); // La variable almacenará un conjunto de campos fetchados en un arreglo.
-        $val=1; // Valor inicial de conteo #se conoce la existencia de 10 tablas iniciando en 1 con relacion al bucle for(); $val++ incrementará en respecto al ciclo.
-
-        for ($i=1; $i <=10 ; $i++) { 
-            
-            $tablas = $con->prepare("SELECT s".$i."_app1_status AS S".$i." FROM tbl_serie".$i."_app1 WHERE us_id = '".$id_user."';"); // consulta de seleccion del campo a sumar.
-            $tablas-> execute(); //ejecuta la consulta..
-			$campos[$i] = $tablas -> fetch(); // Se almacenan los datos conforme al recorrido.. 
-			if(is_array($tablas)){ //para validar si existe el arreglo en nuevas versiones de php
-				$sumar[$i] = $campos[$i]["S".$val]; // Conjunta las variables fechadas por la consulta.
-			}
-			$val++; // incremento de la variable.
-            
-          }
-          $Porc_total = array_sum($sumar); // Variable que contine la suma de los campos almacenados en el arreglo sumar;
+        $Porc_total = 0;
+        $consultaavance = $con->prepare("SELECT app1_avance AS avance FROM tbl_app1_res_us WHERE us_id = '".$id_user."';"); // consulta del avance
+        $consultaavance->execute(); // ejecuta la consulta..
+        if($consultaavance!=false){ //para validar si existe el arreglo en nuevas versiones de php
+            $avance = $consultaavance->fetchColumn();
+            $Porc_total = $avance/10;
+        }
           $next = $Porc_total+1; // Aprueba la sesion terminada para continuar al siguiente por instruccion;
 
-          if ($Porc_total>0 && $Porc_total<10) {
+          if ($Porc_total>0 && $Porc_total<100) {
             $porcentaje = $Porc_total."0";
-            $texto = "No has completado la prueba, para obtener tu resultado debes completarla en su totalidad al 100%.";
+            $texto = "No has completado la prueba, para obtener un resultado debes completarla en su totalidad al 100%.";
             $button = '<button href="#" onclick="next_serie('.$next.')" class="btn btn-warning"><i class="fa fa-refresh"></i> Continuar</button>';
             $menunav = '<a id="enlazar" href="#" onclick="next_serie('.$next.')"><i class="fa fa-paste"></i> Terman Merril <span id="proceso" class="label label-warning pull-right">Continuar '.$porcentaje.'%</span></a>';
               
@@ -210,7 +177,7 @@
           }
           if($Porc_total==0){
               $porcentaje = $Porc_total;
-              $texto = "Esta prueba no ha sido iniciada, puedes iniciarla cuando el aplicador te lo autorice.";
+              $texto = "Esta prueba no ha sido iniciada, puedes iniciarla en cuanto te lo autoricen.";
               $button = '<button href="#" id="app0'.$next.'" class="btn btn-success">Iniciar Prueba <i class="fa fa-child"></i></button>';
               $menunav = '<a href="#" id="app1" class="app1"><i class="fa fa-paste"></i> Terman Merril <span id="proceso" class="label label-info pull-right">Iniciar</span></a>';
           }
@@ -229,7 +196,7 @@
         <div class="divider"></div>
         <p>
             <?=$texto;?>
-          <!--No has acompletado la prueba, para obtener tu resultado debes acompletarla en su totalidad del 100%.--> 
+          <!--No has completado la prueba, para obtener tu resultado debes completarla en su totalidad del 100%.-->
         </p>
         <div class="col col-xs-12" align="center">
             <?=$button;?>
@@ -477,11 +444,11 @@
           <div class="col col-md-2 col-sm-12 col-xs-12 ">
             <span class="badge bg-green"><b>Ejercicio <?=$num;?></b></span>
           </div>           
-          <div align="justify" class="col col-md-5 col-sm-12 col-xs-12 ">
-             <b><h2><?php  while (list(, $valor) = each($excluir)) {
-          $listado = '<span class="badge badge-success"> '.$valor.' </span> , ';
-          echo $listado;
-      }?></h2></b>
+          <div align="justify" class="col col-md-5 col-sm-12 col-xs-12 "> 
+			  <b><h2><?php foreach ($excluir as $valor) {
+				  $listado = '<span class="badge badge-success"> '.$valor.' </span> , ';
+				  echo $listado;
+			  }?></h2></b>
           </div>
           <div class="col col-md-1 col-sm-12 col-xs-12">
               <label>
@@ -1038,32 +1005,33 @@
 
   function register_us_app1($id_user){
     include '../php/db/conexionDB.php';
+	
     // verificar si no hay registros (del alumno) exitentes de la app1 en la db.
     /**
-     * Zona Honoraria..
+     * Zona Horaria..
      */
       date_default_timezone_set('America/Merida');
 
-    $verificar = $con -> prepare("SELECT us_id FROM tbl_serie1_app1 WHERE us_id = '".$id_user."';"); 
-    $verificar -> execute();
-
-    $contarExis = $verificar -> rowCount();
+    //$verificar = $con -> prepare("SELECT us_id FROM tbl_serie1_app1 WHERE us_id = '".$id_user."';"); 
+    //$verificar -> execute();
+    //$contarExis = $verificar -> rowCount();
+	
+	$verificar = $con->prepare("SELECT us_id FROM tbl_serie1_app1 WHERE us_id = :id_user");
+	$verificar->bindParam(':id_user', $id_user);
+	$verificar->execute();
+	$contarExis = $verificar->rowCount();
 
     if ($contarExis >= 1) {
        ## echo "not";
     } else {
         for ($i=1; $i <=10 ; $i++) { 
-
-            $insertion = $con -> prepare("INSERT INTO tbl_serie".$i."_app1 SET us_id = '".$id_user."'; ");
+            $insertion = $con -> prepare("INSERT INTO tbl_serie".$i."_app1 SET us_id = '".$id_user."';");
             $insertion -> execute();
-
         }
         $hoy = date("Y-m-d H:i:s");
-        $register = $con->prepare("INSERT INTO tbl_app1_res_us SET us_id = '".$id_user."',
-                                                                   app1_fec_inicio = '".$hoy."' ");
+        $register = $con->prepare("INSERT INTO tbl_app1_res_us SET us_id = '".$id_user."', app1_fec_inicio = '".$hoy."' ");
         $register->execute();
     }
-    
   }
 
   function NivelCI($resultadoAlum, $evento){
@@ -1583,7 +1551,7 @@ function respuesta_alum($id_us, $id_car, $r1,$r2,$r3,$r4,$r5,$r6,$r7,$r8,$r9,$r1
 
   class v_preg_res {
 
-  public function respuesta($us_id,$campo,$car_id)  // recibe el parametro id del alumno el campo de la tabla en la base de datos y el id de la carrera
+  public static function respuesta($us_id,$campo,$car_id)  // recibe el parametro id del alumno el campo de la tabla en la base de datos y el id de la carrera
   {
     include '../../php/db/conexionDB.php'; // iniciar la conexion por medio de la inclusión 
     // Consulta de los campos de la tabla correspondiente en la base de datos
@@ -1614,7 +1582,7 @@ function respuesta_alum($id_us, $id_car, $r1,$r2,$r3,$r4,$r5,$r6,$r7,$r8,$r9,$r1
 
   }
 
-  public function preguntas_carreras($car_id,$id_usuario)
+  public static function preguntas_carreras($car_id,$id_usuario)
   {
     include '../../php/db/conexionDB.php';
     $id = $id_usuario;
@@ -1652,7 +1620,7 @@ function respuesta_alum($id_us, $id_car, $r1,$r2,$r3,$r4,$r5,$r6,$r7,$r8,$r9,$r1
           ?>
           <tr>
             <td><?=$contador;?></td>
-            <td><?=utf8_encode($filas_preg["preg"]);?></td>
+            <td><?=$filas_preg["preg"];?></td>
             <?=v_preg_res::respuesta($id,$contador,$filas_preg["id_car"]);?>
           </tr>
           <?php

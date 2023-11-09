@@ -2,11 +2,7 @@
 session_start();
 include '../php/DB/conexionDB.php';
 if (isset($_SESSION["session_root"])) {
-
     $id = $_SESSION["session_root"];
-
-
-
     $query = $con -> prepare ("SELECT tbl_usuarios.us_id AS ID, 
                                                 tbl_usuarios.us_nombre AS Nombre, 
                                                 tbl_usuarios.us_genero AS Sexo,
@@ -18,7 +14,6 @@ if (isset($_SESSION["session_root"])) {
                                           INNER JOIN tbl_roles ON tbl_usuarios.rol_id = tbl_roles.rol_id
                                           AND tbl_usuarios.us_id = '".$id."';");
     $query -> execute();
-
     $row = $query -> fetch();
 
     function checked($valor , $input){
