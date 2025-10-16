@@ -20,13 +20,19 @@
 			echo $campo["nombreUser"]; 
 		}else if ($campo_imprimir == "car") {
 			echo $campo["Carrera"];
+			
 		}elseif ($campo_imprimir == "2nom") {
 			$expl = explode(' ', $campo["nombreUser"]);
-
-			$dos_nombres = $expl[0]." ".$expl[1];
+			// --- A R R E G L O ---
+            // Verifica si el índice [1] existe antes de usarlo. Si no existe, usa una cadena vacía.
+			$dos_nombres = $expl[0] . (isset($expl[1]) ? " ".$expl[1] : ""); // <-- ¡ARREGLADO!
+            // Si quieres los dos primeros, no necesitas la verificación.
+            // Si el nombre es "Hesiquio", $expl[1] no existe, pero con el operador ternario,
+            // si no existe, solo concatenamos una cadena vacía.
+			//codigo antiguo modificado el 16 de octubre por sebastian y hesiquio
+			//$dos_nombres = $expl[0]." ".$expl[1];
 			$dos_nombres = ucwords(strtolower($dos_nombres));
 			echo $dos_nombres;
-
 		}elseif ($campo_imprimir == "1nom") {
 			$expl = explode(' ', $campo["nombreUser"]);
 			$un_nombre = $expl[0];

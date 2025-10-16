@@ -1,4 +1,4 @@
-z<?php
+<?php
 session_start();
 $id_usuario = $_SESSION["session_student"];
 include "../db/conexionDB.php";

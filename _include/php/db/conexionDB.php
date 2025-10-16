@@ -1,6 +1,6 @@
 <?php
 try {
-$con = new PDO('mysql:host=localhost;dbname=app_itse', 'root', '1234abc.');
+$con = new PDO('mysql:host=localhost;dbname=app_itse', 'root', '');
 #$con = new PDO('mysql:host=localhost;dbname=app_itse', 'pepe', 'ccitsecentro10');
 $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
